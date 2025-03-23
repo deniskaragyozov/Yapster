@@ -1,2 +1,0 @@
-# Yapster
-SoftUni React project
