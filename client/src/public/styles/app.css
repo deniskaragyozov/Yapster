@@ -1,0 +1,14 @@
+body {
+    background-color: #060606;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
