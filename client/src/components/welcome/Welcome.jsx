@@ -14,7 +14,7 @@ export default function Welcome(){
     const [isLoginModalOpen, setLoginModalOpen] = useState(false);
 
     const loginClickHandler = () => {
-        setRegisterModalOpen(true);
+        setLoginModalOpen(true);
     };
 
     const closeLoginModal = () => {
