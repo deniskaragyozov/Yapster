@@ -62,7 +62,3 @@ input:focus {
     width: 100px;
     margin-bottom: 10px;
 }
-
-.registerLogoImg:hover{
-    transform: scale(1.2);
-}
