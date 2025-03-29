@@ -11,9 +11,10 @@ export default function Welcome(){
         <p className={styles.homeDescription}>Talk about anything that comes to mind, find friends, have fun!</p>
         <div className={styles.buttonContainer}>
         <Link to="/login">  <button className={styles.welcomeBtn}>Log into your account</button> </Link>
+        <Link to="/register" ><button className={styles.welcomeBtn}>Create an account</button></Link>
+        or
         <Link to="/home"> <button className={styles.welcomeBtn}>Continue as guest</button> </Link>
         </div>
-        <Link to="/register" className={styles.alreadyRegistered}>Haven't signed up already?</Link>
         </>
     )
 }

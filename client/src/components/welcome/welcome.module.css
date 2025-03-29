@@ -15,17 +15,17 @@ h1 {
     background-color: #32CD32;
     color: rgb(235, 235, 235);
     text-shadow: 0px 1px 1px rgb(0, 0, 0);
-    padding: 12px 25px;
+    padding: 8px 15px;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, transform 0.2s;
     border-radius: 30px;
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
     font-weight: bold;
     letter-spacing: 1px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     width: auto;
     align-self: center;
 }
@@ -43,7 +43,7 @@ h1 {
     gap: 5px; 
 }
 
-.alreadyRegistered {
+/* .alreadyRegistered {
     color: #ffffff;
     text-decoration: none;
     font-size: 1rem;
@@ -55,7 +55,7 @@ h1 {
 .alreadyRegistered:hover {
     color: #32CD32;
     transform: scale(1.05);
-}
+} */
 
 .homeLogoImg {
     width: 160px;
