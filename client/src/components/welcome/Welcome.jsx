@@ -40,11 +40,11 @@ export default function Welcome(){
         or
         <Link to="/home"> <button className={styles.welcomeBtn}>Continue as guest</button> </Link>
         </div>
-        <Modal isOpen={isRegisterModalOpen} onClose={closeRegisterModal}>
+        <Modal isOpen={isLoginModalOpen} onClose={closeLoginModal}>
             <Login />
         </Modal>
          
-         <Modal isOpen={isLoginModalOpen} onClose={closeLoginModal}>
+         <Modal isOpen={isRegisterModalOpen} onClose={closeRegisterModal}>
             <Register />
         </Modal>
         </>
