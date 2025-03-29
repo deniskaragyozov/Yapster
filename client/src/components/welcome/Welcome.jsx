@@ -10,10 +10,10 @@ export default function Welcome(){
         <h1>Welcome to Yapster</h1>
         <p className={styles.homeDescription}>Talk about anything that comes to mind, find friends, have fun!</p>
         <div className={styles.buttonContainer}>
-        <Link to="/register">  <button className={styles.welcomeBtn}>Get Started</button> </Link>
+        <Link to="/login">  <button className={styles.welcomeBtn}>Log into your account</button> </Link>
         <Link to="/home"> <button className={styles.welcomeBtn}>Continue as guest</button> </Link>
         </div>
-        <Link to="#" className={styles.alreadyRegistered}>Already registered?</Link>
+        <Link to="/register" className={styles.alreadyRegistered}>Haven't signed up already?</Link>
         </>
     )
 }

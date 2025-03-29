@@ -18,7 +18,7 @@ export default function Register(){
             <input type="password" name="password" placeholder="Password" />
             <button type="submit" className={styles.signupBtn}>Sign Up</button>
                 </form>
-            <Link to="#" className={styles.loginLink}>Already have an account? Log in</Link>
+            <Link to="/login" className={styles.loginLink}>Already have an account? Log in</Link>
             </div>
         </>
     )
