@@ -52,8 +52,8 @@ h1 {
 }
 
 .alreadyRegistered:hover {
-    color: rgba(96, 91, 91, 0.994);
-    text-decoration: underline;
+    color: #32CD32;
+    transform: scale(1.05);
 }
 
 .homeLogoImg {
