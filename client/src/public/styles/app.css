@@ -1,5 +1,6 @@
 body {
-    background-color: #060606;
+    /* background-color: #060606; */
+    background: linear-gradient(135deg, #060606, #32CD32 600%);
     color: white;
     font-family: 'Roboto Slab', serif;
     text-align: center;
