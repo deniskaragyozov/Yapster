@@ -93,7 +93,8 @@
 
 .postBtn {
     background-color: #32CD32;
-    color: #1e1e1e;
+    text-shadow: 0px 1px 1px rgb(0, 0, 0);
+    color: rgb(235, 235, 235);
     padding: 12px 25px;
     border: none;
     font-size: 1.2rem;
@@ -148,7 +149,6 @@
 }
 
 .readMore {
-
     background-color: white;
     color: #3a3b3a;
     padding: 5px 10px;
@@ -165,7 +165,8 @@
 
 .readMore:hover{
     background-color: #32CD32;
-    color: #1e1e1e;
+    color: rgb(235, 235, 235);
+    text-shadow: 0px 1px 1px rgb(0, 0, 0);
     transform: scale(1.05);
     box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.5);
 }
