@@ -1,4 +1,4 @@
-import logoImage from '../../assets/logo_text.png'
+import logoImage from '../../assets/logo.png'
 import pfpImage from '../../assets/profile.png'
 import notisImage from '../../assets/notifications.png'
 import logoutImage from '../../assets/logout.png'
