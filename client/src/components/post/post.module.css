@@ -1,4 +1,4 @@
-.registerContainer {
+.postContainer {
     text-align: center;
     background-color: #1e1e1e;
     padding: 30px;
@@ -6,7 +6,7 @@
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
-.registerForm {
+.postForm {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -27,7 +27,23 @@ input:focus {
     border-color: #ffffff;
 }
 
-.signupBtn {
+textarea {
+    width: 90%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #ffffff;
+}
+
+.postBtn {
     background-color: #32CD32;
     color: white;
     padding: 10px;
@@ -38,13 +54,31 @@ input:focus {
     transition: 0.3s;
 }
 
-.signupBtn:hover {
+.postBtn:hover {
     background-color: white;
     color: #32CD32;
     transform: scale(1.05);
 }
 
-.registerLogoImg {
+.postLink {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 20px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.postLink:hover {
+    color: #32CD32;
+    transform: scale(1.05);
+}
+
+.postLogoImg {
     width: 100px;
     margin-bottom: 10px;
+}
+
+h1{
+    font-size: 2rem;
 }

@@ -10,10 +10,12 @@ import { useState } from 'react'
 import Modal from '../modal/Modal.jsx'
 import Login from '../login/Login.jsx'
 import Register from '../register/Register.jsx'
+import Post from '../post/Post.jsx'
 
 export default function Home(){
      const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
-        const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+     const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+     const [isPostModalOpen, setPostModalOpen] = useState(false);
     
         const loginClickHandler = () => {
             setLoginModalOpen(true);
@@ -30,6 +32,14 @@ export default function Home(){
         const closeRegisterModal = () => {
             setRegisterModalOpen(false);
         };
+
+        const postClickHandler = () => {
+            setPostModalOpen(true);
+        };
+    
+        const closePostModal = () => {
+            setPostModalOpen(false);
+        };
     return (
         <div className={styles.container}>
         <nav className={styles.sidebar}>
@@ -40,7 +50,7 @@ export default function Home(){
                 <li><img src={registerImage} alt="Register Icon" className={styles.navIcons}/><Link to="#" onClick={signupClickHandler}>Register</Link></li>
                 <li><img src={loginImage} alt="Login Icon" className={styles.navIcons}/><Link to="#" onClick={loginClickHandler}>Login</Link></li>
                 <li><img src={pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to="/profile">Profile</Link></li>
-                <li><Link to="#"><button className={styles.postBtn}>Post</button></Link></li>
+                <li><Link to="#"><button onClick={postClickHandler} className={styles.postBtn}>Post</button></Link></li>
             </ul>
         </nav>
         <main className={styles.feed}>
@@ -62,6 +72,10 @@ export default function Home(){
                  
             <Modal isOpen={isRegisterModalOpen} onClose={closeRegisterModal}>
                 <Register />
+            </Modal>
+
+            <Modal isOpen={isPostModalOpen} onClose={closePostModal}>
+                <Post />
             </Modal>
     </div>
     )
