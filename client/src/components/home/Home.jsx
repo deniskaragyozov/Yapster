@@ -3,7 +3,6 @@ import pfpImage from '../../assets/profile.png'
 import notisImage from '../../assets/notifications.png'
 import registerImage from '../../assets/register.png'
 import loginImage from '../../assets/login.png'
-import logoutImage from '../../assets/logout.png'
 
 import { Link } from 'react-router'
 import styles from './home.module.css'
@@ -40,8 +39,7 @@ export default function Home(){
                 <li><img src={notisImage} alt="Notifications Icon" className={styles.navIcons}/><Link to="#">Notifications</Link></li>
                 <li><img src={registerImage} alt="Register Icon" className={styles.navIcons}/><Link to="#" onClick={signupClickHandler}>Register</Link></li>
                 <li><img src={loginImage} alt="Login Icon" className={styles.navIcons}/><Link to="#" onClick={loginClickHandler}>Login</Link></li>
-                <li><img src={pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to="#">Profile</Link></li>
-                <li><img src={logoutImage} alt="Logout Icon" className={styles.navIcons} /><Link to="#">Logout</Link></li>
+                <li><img src={pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to="/profile">Profile</Link></li>
                 <li><Link to="#"><button className={styles.postBtn}>Post</button></Link></li>
             </ul>
         </nav>
@@ -56,10 +54,6 @@ export default function Home(){
                 <Link to="#">
                 <button className={styles.readMore}>read more...</button>
                 </Link>
-                {/* Add on the details page 
-                <button className="like-btn">
-                    <img src="assets/like.png" alt="Like">
-                </button> */}
             </div>
         </main>
             <Modal isOpen={isLoginModalOpen} onClose={closeLoginModal}>
