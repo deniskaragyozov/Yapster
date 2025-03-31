@@ -53,7 +53,7 @@ export default function Sidebar(){
             <li><img src={registerImage} alt="Register Icon" className={styles.navIcons}/><Link to="#" onClick={signupClickHandler}>Register</Link></li>
             <li><img src={loginImage} alt="Login Icon" className={styles.navIcons}/><Link to="#" onClick={loginClickHandler}>Login</Link></li>
             <li><img src={pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to="/profile">Profile</Link></li>
-            <li><img src={logoutImage} alt="Profile Icon"  className={styles.navIcons}/><Link to="#">Logout</Link></li>
+            <li><img src={logoutImage} alt="Profile Icon"  className={styles.navIcons}/><Link to="/logout">Logout</Link></li>
             <li><Link to="#"><button onClick={postClickHandler} className={styles.postBtn}>Post</button></Link></li>
         </ul>
     </nav>
