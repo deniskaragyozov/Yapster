@@ -7,7 +7,9 @@ import { useNavigate } from 'react-router'
 import { useActionState, useContext, useState } from 'react';
 import { UserContext } from '../../contexts/UserContext.js';
 
-export default function Login(){
+export default function Login({
+    closeModal
+}){
     const navigate = useNavigate();
     const {userLoginHandler} = useContext(UserContext);
     const { login } = useLogin();
@@ -26,6 +28,8 @@ export default function Login(){
             const authData = await login(values.email, values.password);
 
             userLoginHandler(authData);
+
+            closeModal();
     
             navigate('/');
         }catch(err){

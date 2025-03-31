@@ -7,7 +7,9 @@ import logoImg from '../../assets/logo.png'
 import styles from './register.module.css'
 
 
-export default function Register(){
+export default function Register({
+    closeModal
+}){
     const navigate = useNavigate()
     const {userLoginHandler} = useContext(UserContext);
     const { register } = useRegister();
@@ -34,7 +36,9 @@ export default function Register(){
             const authData = await register(email, password, username, profilePicUrl);
 
             userLoginHandler(authData);
-                        
+            
+            closeModal();
+
             navigate('/home');
         }catch(err){
             setError(err.message);

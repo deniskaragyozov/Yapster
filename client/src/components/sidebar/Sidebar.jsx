@@ -58,11 +58,11 @@ export default function Sidebar(){
         </ul>
     </nav>
                 <Modal isOpen={isLoginModalOpen} onClose={closeLoginModal}>
-                <Login />
+                <Login closeModal={closeLoginModal}/>
             </Modal>
                  
             <Modal isOpen={isRegisterModalOpen} onClose={closeRegisterModal}>
-                <Register />
+                <Register closeModal={closeRegisterModal}/>
             </Modal>
 
             <Modal isOpen={isPostModalOpen} onClose={closePostModal}>
