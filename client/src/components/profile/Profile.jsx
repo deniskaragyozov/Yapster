@@ -5,20 +5,13 @@ import logoutImage from '../../assets/logout.png'
 
 import { Link } from 'react-router'
 import styles from './profile.module.css'
+import Sidebar from '../sidebar/Sidebar.jsx'
 
 export default function Profile() {
     return (
         <>
             <div className={styles.container}>
-                <nav className={styles.sidebar}>
-                    <ul>
-                        {/* TODO: Add dynamic navigation */}
-                        <li><Link to='/home'><img src={logoImage} alt="logo" className={styles.sidebarLogoImg} /></Link></li>
-                        <li><img src={homeImage} alt="Home Icon" className={styles.navIcons} /><Link to="/home">Home</Link></li>
-                        <li><img src={logoutImage} alt="Logout Icon" className={styles.navIcons} /><Link to="#">Logout</Link></li>
-                    </ul>
-                </nav>
-
+              <Sidebar/>
                 <main className={styles.feed}>
                     <div className={styles.profileContainer}>
 
