@@ -10,9 +10,10 @@ import Register from './components/register/Register.jsx'
 import Login from './components/login/Login.jsx'
 import Profile from './components/profile/Profile.jsx'
 import { useState } from 'react'
+import usePersistedState from './hooks/usePersistedState.js'
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = usePersistedState('auth', {});
 
   const userLoginHandler = (resultData) => {
     setUser(resultData);

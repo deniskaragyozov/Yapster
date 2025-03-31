@@ -17,7 +17,7 @@ export default function Login(){
     const loginFormHandler = async (_, formData) => {
         const values = Object.fromEntries(formData);
         
-        if(values.email == '' || values.password == ''){
+        if(values.email === '' || values.password === ''){
             setError("All fields must be filled");
             return;
         }

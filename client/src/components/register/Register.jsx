@@ -21,7 +21,7 @@ export default function Register(){
     const registerFormHandler = async (formData) => {
         const {profilePicUrl, username, email, password, rePassword } = Object.fromEntries(formData);
 
-        if(profilePicUrl == '' || username == '' || email == '' || password == '' || rePassword == '' ){
+        if(profilePicUrl === '' || username === '' || email === '' || password === '' || rePassword === '' ){
             setError("All fields must be filled");
             return;
         }
