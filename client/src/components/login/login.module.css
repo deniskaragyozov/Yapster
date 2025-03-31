@@ -5,6 +5,10 @@
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
+.title{
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
 
 .loginForm {
     display: flex;
@@ -47,4 +51,11 @@ input:focus {
 .loginLogoImg {
     width: 100px;
     margin-bottom: 10px;
+}
+
+.errorText{
+    font-size: 0.8rem;
+    color: #ff0000;
+    margin-top: -15px;
+    margin-bottom: -5px;
 }

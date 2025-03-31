@@ -48,3 +48,15 @@ input:focus {
     width: 100px;
     margin-bottom: 10px;
 }
+
+.title{
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
+
+.errorText{
+    font-size: 0.8rem;
+    color: #ff0000;
+    margin-top: -15px;
+    margin-bottom: -5px;
+}
