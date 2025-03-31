@@ -21,12 +21,17 @@ function App() {
     setUser({});
   }
 
+  console.log(!!user.email)
+
   return (
     <>
     <UserContext.Provider value={{...user, userLoginHandler, userLogoutHandler}}>
      <Routes>
-        <Route index element={<Welcome/>}/>
-        <Route path='/home' element={<Home />}/>
+     {!!user.email 
+     ?<Route index element={<Home />}/> 
+     :<Route index element={<Welcome/>}/> 
+     }   
+        <Route path="/home" element={<Home />}/> 
         <Route path='/profile' element={<Profile />}/>
         <Route path='/logout' element={<Logout />}/>
 

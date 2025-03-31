@@ -27,7 +27,7 @@ export default function Login(){
 
             userLoginHandler(authData);
     
-            navigate('/home');
+            navigate('/');
         }catch(err){
             setError(err.message);
         }
