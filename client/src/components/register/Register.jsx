@@ -16,15 +16,16 @@ export default function Register({
     const [formValues, setFormValues] = useState({
         profilePicUrl: '',
         username: '',
-        email: ''
+        bio: '',
+        email: '',
     });
     const [error, setError] = useState(null);
 
     const registerFormHandler = async (formData) => {
-        const {profilePicUrl, username, email, password, rePassword } = Object.fromEntries(formData);
+        const {profilePicUrl, username, bio, email, password, rePassword } = Object.fromEntries(formData);
 
-        if(profilePicUrl === '' || username === '' || email === '' || password === '' || rePassword === '' ){
-            setError("All fields must be filled");
+        if(username === '' || email === '' || password === '' || rePassword === '' ){
+            setError("All required fields must be filled");
             return;
         }
         if(password !== rePassword){
@@ -33,7 +34,7 @@ export default function Register({
         }
 
         try{
-            const authData = await register(email, password, username, profilePicUrl);
+            const authData = await register(email, password, username, profilePicUrl, bio);
 
             userLoginHandler(authData);
             
@@ -54,9 +55,10 @@ export default function Register({
             <h1 className={styles.title}>Create your account</h1>
             <div className={styles.registerContainer}>
             <form action={registerFormHandler} className={styles.registerForm}>
-                <input type="text" name="profilePicUrl" value={formValues.profilePicUrl} onChange={changeHandler} placeholder="Profile picture (link)" />
+                <input type="text" name="profilePicUrl" value={formValues.profilePicUrl} onChange={changeHandler} placeholder="Profile picture link (optional)" />
                 <input type="text" name="username" value={formValues.username} onChange={changeHandler} placeholder="Username" />
                 <input type="email" name="email" value={formValues.email} onChange={changeHandler} placeholder="Email" />
+                <input type="text" name="bio" value={formValues.bio} onChange={changeHandler} placeholder="Bio (optional)" />
                 <input type="password" name="password" minLength="6" placeholder="Password" />
                 <input type="password" name="rePassword" minLength="6" placeholder="Confirm password" />
                 {error && <h6 className={styles.errorText}>{error}!</h6>}

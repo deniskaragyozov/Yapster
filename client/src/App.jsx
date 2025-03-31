@@ -30,7 +30,7 @@ function App() {
      :<Route index element={<Welcome/>}/> 
      }   
         <Route path='/home' element={<Home />}/> 
-        <Route path='/profile' element={<Profile />}/>
+        <Route path='/:userId/profile' element={<Profile />}/>
         <Route path='/logout' element={<Logout />}/>
 
      </Routes>

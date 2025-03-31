@@ -19,7 +19,7 @@ export default function Sidebar(){
          const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
          const [isLoginModalOpen, setLoginModalOpen] = useState(false);
          const [isPostModalOpen, setPostModalOpen] = useState(false);
-         const { email } = useContext(UserContext)
+         const {email, _id} = useContext(UserContext)
         
             const loginClickHandler = () => {
                 setLoginModalOpen(true);
@@ -53,7 +53,7 @@ export default function Sidebar(){
             {!!email 
             ?<>
             <li><img src={notisImage} alt="Notifications Icon" className={styles.navIcons}/><Link to="#">Notifications</Link></li>
-            <li><img src={pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to="/profile">Profile</Link></li>
+            <li><img src={pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to={`/${_id}/profile`}>Profile</Link></li>
             <li><img src={logoutImage} alt="Profile Icon"  className={styles.navIcons}/><Link to="/logout">Logout</Link></li>
             <li><Link to="#"><button onClick={postClickHandler} className={styles.postBtn}>Post</button></Link></li>
             </>

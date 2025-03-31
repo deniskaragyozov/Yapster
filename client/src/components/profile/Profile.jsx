@@ -3,11 +3,18 @@ import pfpImage from '../../assets/profile.png'
 import homeImage from '../../assets/home.png'
 import logoutImage from '../../assets/logout.png'
 
-import { Link } from 'react-router'
+import { Link, useParams } from 'react-router'
 import styles from './profile.module.css'
 import Sidebar from '../sidebar/Sidebar.jsx'
+import { useContext } from 'react'
+import { UserContext } from '../../contexts/UserContext.js'
 
 export default function Profile() {
+    // const {userId} = useParams(); when not own profile use id to get user
+
+    const {profilePicUrl, username, bio} = useContext(UserContext);
+    console.log(bio)
+
     return (
         <>
             <div className={styles.container}>
@@ -16,11 +23,11 @@ export default function Profile() {
                     <div className={styles.profileContainer}>
 
                         <div className={styles.profileHeader}>
-                            <img src={pfpImage} alt="Profile Picture" className={styles.profilePic} />
-                            <h1 className={styles.usernameProfile}>Username</h1>
+                            <img src={!!profilePicUrl ? profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePic} />
+                            <h1 className={styles.usernameProfile}>{username}</h1>
                             <p className={styles.followers}>Followers: 123</p>
                             <p className={styles.bio}>
-                                This is a sample bio. Write something about yourself here. It can be a short description or anything you'd like to share.
+                            {!!bio ? bio : "No bio yet"}
                             </p>
                         </div>
 

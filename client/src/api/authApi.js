@@ -18,8 +18,8 @@ export const useLogin = () =>
 
 export const useRegister = () =>
 {
-    const register = (email, password, username, profilePicUrl) =>
-        request("POST", `${baseUrl}/register`, {email, password, username, profilePicUrl});
+    const register = (email, password, username, profilePicUrl, bio) =>
+        request("POST", `${baseUrl}/register`, {email, password, username, profilePicUrl, bio});
 
     return {
         register
