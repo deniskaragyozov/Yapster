@@ -8,16 +8,18 @@ import logoutImage from '../../assets/logout.png'
 
 import { Link } from 'react-router'
 import styles from './sidebar.module.css'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Modal from '../modal/Modal.jsx'
 import Login from '../login/Login.jsx'
 import Register from '../register/Register.jsx'
 import Post from '../post/Post.jsx'
+import { UserContext } from '../../contexts/UserContext.js'
 
 export default function Sidebar(){
          const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
          const [isLoginModalOpen, setLoginModalOpen] = useState(false);
          const [isPostModalOpen, setPostModalOpen] = useState(false);
+         const { email } = useContext(UserContext)
         
             const loginClickHandler = () => {
                 setLoginModalOpen(true);
@@ -46,15 +48,22 @@ export default function Sidebar(){
     <>      
     <nav className={styles.sidebar}>
         <ul>
-            {/* TODO: Add dynamic navigation */}
             <li><Link to='/'><img src={logoImage} alt="logo" className={styles.sidebarLogoImg}/></Link></li>
             <li><img src={homeImage} alt="Home Icon" className={styles.navIcons} /><Link to="/home">Home</Link></li>
+            {!!email 
+            ?<>
             <li><img src={notisImage} alt="Notifications Icon" className={styles.navIcons}/><Link to="#">Notifications</Link></li>
-            <li><img src={registerImage} alt="Register Icon" className={styles.navIcons}/><Link to="#" onClick={signupClickHandler}>Register</Link></li>
-            <li><img src={loginImage} alt="Login Icon" className={styles.navIcons}/><Link to="#" onClick={loginClickHandler}>Login</Link></li>
             <li><img src={pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to="/profile">Profile</Link></li>
             <li><img src={logoutImage} alt="Profile Icon"  className={styles.navIcons}/><Link to="/logout">Logout</Link></li>
             <li><Link to="#"><button onClick={postClickHandler} className={styles.postBtn}>Post</button></Link></li>
+            </>
+            :<>
+            <li><img src={registerImage} alt="Register Icon" className={styles.navIcons}/><Link to="#" onClick={signupClickHandler}>Register</Link></li>
+            <li><img src={loginImage} alt="Login Icon" className={styles.navIcons}/><Link to="#" onClick={loginClickHandler}>Login</Link></li>
+            </>
+        }
+            
+
         </ul>
     </nav>
                 <Modal isOpen={isLoginModalOpen} onClose={closeLoginModal}>
