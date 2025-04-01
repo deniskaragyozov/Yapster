@@ -2,9 +2,16 @@ import pfpImage from '../../assets/profile.png'
 
 import styles from './details.module.css'
 import Sidebar from '../sidebar/Sidebar.jsx'
+import { useParams } from 'react-router';
+import { usePost } from '../../api/postsApi.js';
 
 
 export default function Details(){
+    const params = useParams();
+
+    const postId = params.postId;
+
+    const post = usePost(postId);
 
     return(
         <div className={styles.container}>
@@ -14,20 +21,15 @@ export default function Details(){
             {/* Post Section */}
             <div className={styles.post}>
                     <div className={styles.postHeader}>
-                        <img src={pfpImage} alt="Profile Picture" className={styles.profilePicPost} />
-                        <span className={styles.username}>Username</span>
+                        <img src={!!post.owner?.profilePicUrl ? post.owner.profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePicPost} />
+                        <span className={styles.username}>{post.owner?.username}</span>
                     </div>
-                    <p className={styles.postText}>
-                        This is a detailed post with more content. It can include multiple lines of text and additional
-                        information about the post.
-                    </p>
+                    <p className={styles.postText}>{post.description}</p>
                     <div className={styles.postFooter}>
-                        {/* <span className={styles.postDate}>Posted on: April 1, 2025</span> */}
-                        <span className={styles.postLikes}>Likes: 123</span>
+                        {/* <span className={styles.postLikes}>Likes: 123</span> */}
                         <span className={styles.postComments}>Comments: 45</span>
                     </div>
                 </div>
-
                 {/* Comments Section */}
                 <div className={styles.commentsSection}>
                     <h2>Comments</h2>

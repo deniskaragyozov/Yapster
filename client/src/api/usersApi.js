@@ -40,9 +40,9 @@ export const useUser = (userId) => {
             request("GET", `${baseUrl}?${searchParams.toString()}`)
             .then(setUser)
     }, [userId]);
-
-
+        
     return{
-        ...user[0]
+        ...user[0],
     }
 }
+

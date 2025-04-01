@@ -32,3 +32,18 @@ export const useGetPosts = () => {
         posts
     }
 }
+
+export const usePost = (postId) => {
+    const [post, setPost] = useState({});
+
+
+    useEffect(() => { 
+            request("GET", `${baseUrl}/${postId}`)
+            .then(setPost)
+    }, []);
+
+
+    return{
+        ...post
+    }
+}
