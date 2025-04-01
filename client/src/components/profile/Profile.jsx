@@ -22,12 +22,12 @@ export default function Profile() {
                         <div className={styles.profileHeader}>
                             <img src={!!user.profilePicUrl ? user.profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePic} />
                             <h1 className={styles.usernameProfile}>{user.username}</h1>
-                            <p className={styles.followers}>Followers: 123</p>
+                            <h3>Bio:</h3>
                             <p className={styles.bio}>
                             {!!user.bio ? user.bio : "No bio yet"}
                             </p>
                         </div>
-
+                        
                         <div className={styles.postsContainer}>
                             <div className={styles.post}>
                                 <div className={styles.postHeader}>

@@ -39,7 +39,7 @@ export default function Details(){
                     : null
                     }
                     <div className={styles.postFooter}>
-                        <span className={styles.postComments}>Comments: 45</span>
+                        <span className={styles.postComments}>Likes: 45</span>
                         {isOwner ? (
                             <>
                                 <div className={styles.postActions}>
@@ -51,30 +51,11 @@ export default function Details(){
 
                         {isLoggedin && !isOwner
                         ? (
-                            <button className={styles.commentButton}>Comment</button>
+                            <button className={styles.commentButton}>Like</button>
                         )
                         :<></>}
                     </div>
                 </div>
-                {/* Comments Section */}
-                <div className={styles.commentsSection}>
-                    <h2>Comments</h2>
-                    <div className={styles.comment}>
-                        <div className={styles.commentHeader}>
-                            <img src={pfpImage} alt="Commenter Profile" className={styles.commentProfilePic} />
-                            <span className={styles.commentUsername}>Commenter1</span>
-                        </div>
-                        <p className={styles.commentText}>This is a comment on the post. Great content!</p>
-                    </div>
-
-                    <div className={styles.comment}>
-                        <div className={styles.commentHeader}>
-                            <img src={pfpImage} alt="Commenter Profile" className={styles.commentProfilePic} />
-                            <span className={styles.commentUsername}>Commenter2</span>
-                        </div>
-                        <p className={styles.commentText}>I completely agree with this post!</p>
-                    </div>
-            </div>
         </main>
     </div>
     );
