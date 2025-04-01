@@ -1,9 +1,9 @@
-import logoImg from '../../assets/logo.png'
+import logoImg from '../../assets/logo.png';
 
-import styles from './login.module.css'
+import styles from './login.module.css';
 
 import { useLogin } from '../../api/authApi.js';
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router';
 import { useActionState, useContext, useState } from 'react';
 import { UserContext } from '../../contexts/UserContext.js';
 

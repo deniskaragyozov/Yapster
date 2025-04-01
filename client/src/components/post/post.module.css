@@ -82,3 +82,10 @@ textarea:focus {
 .title{
     font-size: 2rem;
 }
+
+.errorText{
+    font-size: 0.8rem;
+    color: #ff0000;
+    margin-top: -15px;
+    margin-bottom: -5px;
+}

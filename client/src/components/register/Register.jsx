@@ -31,6 +31,10 @@ export default function Register({
             setError("All required fields must be filled");
             return;
         }
+        if(password.length < 6){
+            setError("Password should be at least 6 characters long");
+            return;
+        }
         if(password !== rePassword){
             setError("Passwords don\'t match");
             return;
@@ -64,8 +68,8 @@ export default function Register({
                 <input type="text" name="username" value={formValues.username} onChange={changeHandler} placeholder="Username" />
                 <input type="email" name="email" value={formValues.email} onChange={changeHandler} placeholder="Email" />
                 <input type="text" name="bio" value={formValues.bio} onChange={changeHandler} placeholder="Bio (optional)" />
-                <input type="password" name="password" minLength="6" placeholder="Password" />
-                <input type="password" name="rePassword" minLength="6" placeholder="Confirm password" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="password" name="rePassword" placeholder="Confirm password" />
                 {error && <h6 className={styles.errorText}>{error}!</h6>}
                 <button type="submit" className={styles.signupBtn}>Sign Up</button>
             </form>

@@ -1,7 +1,6 @@
 import logoImage from '../../assets/logo.png'
 import homeImage from '../../assets/home.png'
 import pfpImage from '../../assets/profile.png'
-import notisImage from '../../assets/notifications.png'
 import registerImage from '../../assets/register.png'
 import loginImage from '../../assets/login.png'
 import logoutImage from '../../assets/logout.png'
@@ -52,7 +51,6 @@ export default function Sidebar(){
             <li><img src={homeImage} alt="Home Icon" className={styles.navIcons} /><Link to="/home">Home</Link></li>
             {!!email 
             ?<>
-            <li><img src={notisImage} alt="Notifications Icon" className={styles.navIcons}/><Link to="#">Notifications</Link></li>
             <li><img src={pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to={`/${_id}/profile`}>Profile</Link></li>
             <li><img src={logoutImage} alt="Profile Icon"  className={styles.navIcons}/><Link to="/logout">Logout</Link></li>
             <li><Link to="#"><button onClick={postClickHandler} className={styles.postBtn}>Post</button></Link></li>
@@ -75,7 +73,7 @@ export default function Sidebar(){
             </Modal>
 
             <Modal isOpen={isPostModalOpen} onClose={closePostModal}>
-                <Post />
+                <Post closeModal={closePostModal}/>
             </Modal>
     </>
     );
