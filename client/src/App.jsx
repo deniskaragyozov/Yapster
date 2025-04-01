@@ -11,6 +11,7 @@ import usePersistedState from './hooks/usePersistedState.js'
 import Logout from './components/logout/Logout.jsx'
 import Details from './components/details/Details.jsx'
 import Post from './components/post/Post.jsx'
+import Edit from './components/edit/Edit.jsx'
 
 function App() {
   const [user, setUser] = usePersistedState('auth', {});
@@ -35,6 +36,7 @@ function App() {
         <Route path='/post' element={<Post />}/>
         <Route path='/:userId/profile' element={<Profile />}/>
         <Route path='/:postId/details' element={<Details />}/>
+        <Route path='/:postId/edit' element={<Edit />}/>
         <Route path='/logout' element={<Logout />}/>
 
      </Routes>

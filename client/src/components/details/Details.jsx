@@ -42,7 +42,7 @@ export default function Details(){
                         {isOwner ? (
                             <>
                                 <div className={styles.postActions}>
-                                    <button className={styles.editButton}>Edit</button>
+                                    <Link to={`/${post._id}/edit`}><button className={styles.editButton}>Edit</button></Link>
                                     <button className={styles.deleteButton}>Delete</button>
                                 </div>
                              </>
