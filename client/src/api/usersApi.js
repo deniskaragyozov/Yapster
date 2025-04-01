@@ -4,8 +4,15 @@ import request from "../utils/request.js";
 const baseUrl = "http://localhost:3030/data/accounts"
 
 export const useSaveUser = () => {
-    const saveUser = (userData) =>{
-        const accessToken = userData.accessToken
+    const saveUser = ({email, username, profilePicUrl, bio, accessToken}) =>{
+    
+    const userData = {
+        email,
+        username,
+        profilePicUrl,
+        bio,
+        accessToken
+    }
 
     const options = {
         headers: {
@@ -26,12 +33,16 @@ export const useUser = (userId) => {
 
 
     useEffect(() => { 
-        request("GET", `${baseUrl}/${userId}`)
-        .then(setUser)
+            const searchParams = new URLSearchParams({
+                where: `_ownerId="${userId}"`
+            })
+
+            request("GET", `${baseUrl}?${searchParams.toString()}`)
+            .then(setUser)
     }, [userId]);
 
 
     return{
-        ...user
+        ...user[0]
     }
 }

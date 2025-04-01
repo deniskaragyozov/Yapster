@@ -1,13 +1,8 @@
-import logoImage from '../../assets/logo.png'
 import pfpImage from '../../assets/profile.png'
-import homeImage from '../../assets/home.png'
-import logoutImage from '../../assets/logout.png'
 
 import { Link, useParams } from 'react-router'
 import styles from './profile.module.css'
 import Sidebar from '../sidebar/Sidebar.jsx'
-import { useContext } from 'react'
-import { UserContext } from '../../contexts/UserContext.js'
 import { useUser } from '../../api/usersApi.js'
 
 export default function Profile() {
