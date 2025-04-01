@@ -12,6 +12,7 @@ import Logout from './components/logout/Logout.jsx'
 import Details from './components/details/Details.jsx'
 import Post from './components/post/Post.jsx'
 import Edit from './components/edit/Edit.jsx'
+import Delete from './components/delete/Delete.jsx'
 
 function App() {
   const [user, setUser] = usePersistedState('auth', {});
@@ -37,6 +38,7 @@ function App() {
         <Route path='/:userId/profile' element={<Profile />}/>
         <Route path='/:postId/details' element={<Details />}/>
         <Route path='/:postId/edit' element={<Edit />}/>
+        <Route path='/:postId/delete' element={<Delete />}/>
         <Route path='/logout' element={<Logout />}/>
 
      </Routes>

@@ -68,3 +68,22 @@ export const useEditPost = () => {
         editPost
     }
 }
+
+export const useDeletePost = (postId) => {
+    const { accessToken } = useContext(UserContext);
+    
+    useEffect(() => {
+        const options = {
+            headers:{
+                'X-Authorization': accessToken
+            }
+        }
+
+        try{
+            request("DELETE", `${baseUrl}/${postId}`, null, options)
+            .then(res => console.log(res))
+        }catch(err){
+            console.log(err.message)
+        }
+    }, [])
+}

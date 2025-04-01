@@ -44,7 +44,7 @@ export default function Details(){
                             <>
                                 <div className={styles.postActions}>
                                     <Link to={`/${post._id}/edit`}><button className={styles.editButton}>Edit</button></Link>
-                                    <button className={styles.deleteButton}>Delete</button>
+                                    <Link to={`/${post._id}/delete`}><button className={styles.deleteButton}>Delete</button></Link>
                                 </div>
                              </>
                         ) : <></>}
