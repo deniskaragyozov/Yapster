@@ -32,6 +32,7 @@ export default function Details(){
                         <img src={!!post.owner?.profilePicUrl ? post.owner.profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePicPost} />
                         <span className={styles.username}>{post.owner?.username}</span>
                     </div>
+                    <h3 className={styles.postTitle}>{post.title}</h3>
                     <p className={styles.postText}>{post.description}</p>
                     {!!post.image 
                     ? <img src={post.image} alt="Post Picture" className={styles.postImage} />

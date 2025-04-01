@@ -1,5 +1,6 @@
-import { useDebugValue, useEffect, useState } from "react"
+import { useContext, useDebugValue, useEffect, useState } from "react"
 import request from "../utils/request.js"
+import { UserContext } from "../contexts/UserContext.js"
 
 const baseUrl = "http://localhost:3030/data/posts"
 
@@ -45,5 +46,25 @@ export const usePost = (postId) => {
 
     return{
         ...post
+    }
+}
+
+export const useEditPost = () => {
+
+    const { accessToken } = useContext(UserContext);
+
+    const editPost = (postData, postId) => {
+
+        const options = {
+            headers:{
+                'X-Authorization': accessToken
+            }
+        }
+
+    return request("PUT", `${baseUrl}/${postId}`, postData, options);
+    }
+
+    return{
+        editPost
     }
 }
