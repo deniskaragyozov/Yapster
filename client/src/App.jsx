@@ -9,6 +9,7 @@ import Welcome from './components/welcome/Welcome.jsx'
 import Profile from './components/profile/Profile.jsx'
 import usePersistedState from './hooks/usePersistedState.js'
 import Logout from './components/logout/Logout.jsx'
+import Details from './components/details/Details.jsx'
 
 function App() {
   const [user, setUser] = usePersistedState('auth', {});
@@ -31,6 +32,7 @@ function App() {
      }   
         <Route path='/home' element={<Home />}/> 
         <Route path='/:userId/profile' element={<Profile />}/>
+        <Route path='/details' element={<Details />}/>
         <Route path='/logout' element={<Logout />}/>
 
      </Routes>

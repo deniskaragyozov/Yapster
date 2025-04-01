@@ -17,7 +17,7 @@ export default function Home(){
                     <span className={styles.username}>Username</span>
                 </div>
                 <p className={styles.postText}>This is a sample post with some text content.</p>
-                <Link to="#">
+                <Link to="/details">
                 <button className={styles.readMore}>read more...</button>
                 </Link>
             </div>

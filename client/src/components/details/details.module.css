@@ -1,0 +1,109 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.feed {
+    flex: 1;
+    padding: 20px;
+    margin-right: 300px;
+}
+
+.feed h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    letter-spacing: 2px; 
+    margin-top: -10px;
+    margin-bottom: 70px;
+    color: #ffffff;
+    outline: 2px none #4b4b4b;
+    margin-left: 200px;
+    box-shadow: 0 0 7px rgba(129, 129, 129, 0.583);
+}
+
+.post {
+    background-color: #181717;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    margin-left: 239px;
+}
+
+.postHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.profilePicPost {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.postText {
+    font-size: 1rem;
+    color: #dcdcdc;
+    margin-bottom: 15px;
+}
+
+.postFooter {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.commentsSection {
+    margin-top: 30px;
+}
+
+.commentsSection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    margin-left: 190px;
+}
+
+.comment {
+    background-color: #181717;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    margin-left: 350px;
+    margin-right: 150px;
+}
+
+.commentHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.commentProfilePic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.commentUsername {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.commentText {
+    font-size: 0.9rem;
+    color: #dcdcdc;
+}
