@@ -2,14 +2,13 @@ import { useContext, useEffect } from "react";
 import request from "../utils/request.js"
 import { UserContext } from "../contexts/UserContext.js";
 
-const baseUrl = "http://localhost:3030/users"
+const baseUrl = "http://localhost:3030/users";
 
 export const useLogin = () =>
     {
         const login = (email, password) =>
              request("POST", `${baseUrl}/login`,
                  {email, password});
-
 
         return {
             login
@@ -22,7 +21,7 @@ export const useRegister = () =>
         request("POST", `${baseUrl}/register`, {email, password, username, profilePicUrl, bio});
 
     return {
-        register
+        register,
     }
 }
 

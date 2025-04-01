@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router';
 
 import logoImg from '../../assets/logo.png'
 import styles from './register.module.css'
+import { useSaveUser } from '../../api/usersApi.js';
 
 
 export default function Register({
@@ -13,6 +14,8 @@ export default function Register({
     const navigate = useNavigate()
     const {userLoginHandler} = useContext(UserContext);
     const { register } = useRegister();
+    const { saveUser } = useSaveUser()
+
     const [formValues, setFormValues] = useState({
         profilePicUrl: '',
         username: '',
@@ -35,6 +38,8 @@ export default function Register({
 
         try{
             const authData = await register(email, password, username, profilePicUrl, bio);
+
+            await saveUser(authData);
 
             userLoginHandler(authData);
             
