@@ -39,9 +39,9 @@ export default function Register({
         try{
             const authData = await register(email, password, username, profilePicUrl, bio);
 
-            await saveUser(authData);
+            const createdUser = await saveUser(authData);
 
-            userLoginHandler(authData);
+            userLoginHandler(createdUser);
             
             closeModal();
 

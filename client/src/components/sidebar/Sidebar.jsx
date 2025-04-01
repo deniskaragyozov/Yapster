@@ -19,7 +19,7 @@ export default function Sidebar(){
          const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
          const [isLoginModalOpen, setLoginModalOpen] = useState(false);
          const [isPostModalOpen, setPostModalOpen] = useState(false);
-         const {email, _id} = useContext(UserContext)
+         const {email, _id} = useContext(UserContext);
         
             const loginClickHandler = () => {
                 setLoginModalOpen(true);

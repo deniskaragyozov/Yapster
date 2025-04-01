@@ -8,12 +8,14 @@ import styles from './profile.module.css'
 import Sidebar from '../sidebar/Sidebar.jsx'
 import { useContext } from 'react'
 import { UserContext } from '../../contexts/UserContext.js'
+import { useUser } from '../../api/usersApi.js'
 
 export default function Profile() {
-    // const {userId} = useParams(); when not own profile use id to get user
+    const params = useParams();
 
-    const {profilePicUrl, username, bio} = useContext(UserContext);
-    console.log(bio)
+    const userId = params.userId;
+
+    const user = useUser(userId);
 
     return (
         <>
@@ -23,11 +25,11 @@ export default function Profile() {
                     <div className={styles.profileContainer}>
 
                         <div className={styles.profileHeader}>
-                            <img src={!!profilePicUrl ? profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePic} />
-                            <h1 className={styles.usernameProfile}>{username}</h1>
+                            <img src={!!user.profilePicUrl ? user.profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePic} />
+                            <h1 className={styles.usernameProfile}>{user.username}</h1>
                             <p className={styles.followers}>Followers: 123</p>
                             <p className={styles.bio}>
-                            {!!bio ? bio : "No bio yet"}
+                            {!!user.bio ? user.bio : "No bio yet"}
                             </p>
                         </div>
 
