@@ -1,9 +1,10 @@
 import pfpImage from '../../assets/profile.png'
 
 import styles from './details.module.css'
-import Sidebar from '../sidebar/Sidebar.jsx'
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 import { usePost } from '../../api/postsApi.js';
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext.js';
 
 
 export default function Details(){
@@ -13,9 +14,16 @@ export default function Details(){
 
     const post = usePost(postId);
 
+    const user = useContext(UserContext);
+
+    const isLoggedin = !!user.email;
+
+    const isOwner = user._id === post._ownerId;
+
     return(
         <div className={styles.container}>
-            <Sidebar/>
+            {/* Back Button */}
+            <Link to="/"><button className={styles.backButton}>← Back</button></Link>
         <main className={styles.feed}>
             <h1>Post</h1>
             {/* Post Section */}
@@ -25,9 +33,26 @@ export default function Details(){
                         <span className={styles.username}>{post.owner?.username}</span>
                     </div>
                     <p className={styles.postText}>{post.description}</p>
+                    {!!post.image 
+                    ? <img src={post.image} alt="Post Picture" className={styles.postImage} />
+                    : null
+                    }
                     <div className={styles.postFooter}>
-                        {/* <span className={styles.postLikes}>Likes: 123</span> */}
                         <span className={styles.postComments}>Comments: 45</span>
+                        {isOwner ? (
+                            <>
+                                <div className={styles.postActions}>
+                                    <button className={styles.editButton}>Edit</button>
+                                    <button className={styles.deleteButton}>Delete</button>
+                                </div>
+                             </>
+                        ) : <></>}
+
+                        {isLoggedin && !isOwner
+                        ? (
+                            <button className={styles.commentButton}>Comment</button>
+                        )
+                        :<></>}
                     </div>
                 </div>
                 {/* Comments Section */}

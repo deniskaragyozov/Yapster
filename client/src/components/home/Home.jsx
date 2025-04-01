@@ -9,8 +9,6 @@ export default function Home(){
 
     const { posts } = useGetPosts();
 
-    console.log(posts)
-
     return (
         <div className={styles.container}>
         <Sidebar/>
