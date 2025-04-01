@@ -1,3 +1,4 @@
+import { useDebugValue, useEffect, useState } from "react"
 import request from "../utils/request.js"
 
 const baseUrl = "http://localhost:3030/data/posts"
@@ -16,5 +17,18 @@ export const useCreatePost = () => {
 
     return {
         createPost
+    }
+}
+
+export const useGetPosts = () => {
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        request("GET", baseUrl)
+        .then(setPosts)
+    }, [])
+
+    return{
+        posts
     }
 }

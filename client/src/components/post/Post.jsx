@@ -4,16 +4,18 @@ import styles from './post.module.css';
 import { useActionState, useContext, useState } from 'react';
 import { useCreatePost } from '../../api/postsApi.js';
 import { UserContext } from '../../contexts/UserContext.js';
+import { Link, useNavigate } from 'react-router';
 
-
-export default function Post({
-    closeModal
-}){
+export default function Post(){
     const [formValues, setFormValues] = useState({
         title: '', 
         image: '', 
         description: ''
     });
+
+    const navigate = useNavigate();
+
+    const user = useContext(UserContext);
 
     const { accessToken } = useContext(UserContext);
 
@@ -43,13 +45,13 @@ export default function Post({
             const postData = {
                 title: values.title,
                 image: values.image,
-                description: values.description
+                description: values.description,
+                owner: user
             }
             
             await createPost(postData, accessToken);
 
-            closeModal()
-
+            navigate('/');
         }catch(err){
             setError(err.message);
         }
@@ -64,9 +66,9 @@ export default function Post({
 
     return (
         <>
-        <img src={logoImg} alt="logo" className={styles.postLogoImg}/>
-        <h1 className={styles.title}>What's on your mind?</h1>
-            <div className={styles.postContainer}>
+        <div className={styles.postContainer}>
+            <Link to="/"><img src={logoImg} alt="logo" className={styles.postLogoImg}/></Link>
+                <h1 className={styles.title}>What's on your mind?</h1>
                 <form className={styles.postForm} action={postAction}>
                     <span>Title</span>
                     <input type="text" name="title" value={formValues.title} onChange={changeHandler}/>

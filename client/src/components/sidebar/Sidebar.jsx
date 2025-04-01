@@ -39,10 +39,7 @@ export default function Sidebar(){
             const postClickHandler = () => {
                 setPostModalOpen(true);
             };
-        
-            const closePostModal = () => {
-                setPostModalOpen(false);
-            };
+
     return(  
     <>      
     <nav className={styles.sidebar}>
@@ -53,7 +50,7 @@ export default function Sidebar(){
             ?<>
             <li><img src={pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to={`/${_id}/profile`}>Profile</Link></li>
             <li><img src={logoutImage} alt="Profile Icon"  className={styles.navIcons}/><Link to="/logout">Logout</Link></li>
-            <li><Link to="#"><button onClick={postClickHandler} className={styles.postBtn}>Post</button></Link></li>
+            <li><Link to="/post"><button onClick={postClickHandler} className={styles.postBtn}>Post</button></Link></li>
             </>
             :<>
             <li><img src={registerImage} alt="Register Icon" className={styles.navIcons}/><Link to="#" onClick={signupClickHandler}>Register</Link></li>
@@ -70,10 +67,6 @@ export default function Sidebar(){
                  
             <Modal isOpen={isRegisterModalOpen} onClose={closeRegisterModal}>
                 <Register closeModal={closeRegisterModal}/>
-            </Modal>
-
-            <Modal isOpen={isPostModalOpen} onClose={closePostModal}>
-                <Post closeModal={closePostModal}/>
             </Modal>
     </>
     );
