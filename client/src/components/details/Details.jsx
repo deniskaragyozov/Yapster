@@ -29,7 +29,9 @@ export default function Details(){
     
     const postLikes = likes[postId];
 
-    const hasLiked = postLikes.includes(user._id);
+    console.log(postLikes)
+
+    const hasLiked = !!postLikes ? postLikes.includes(user._id) : false;
 
     return(
         <div className={styles.container}>
@@ -48,7 +50,7 @@ export default function Details(){
                     : null
                     }
                     <div className={styles.postFooter}>
-                        <span className={styles.postComments}>Likes: {postLikes.length}</span>
+                        <span className={styles.postComments}>Likes: {postLikes?.length}</span>
                         {isOwner ? (
                             <>
                                 <div className={styles.postActions}>
@@ -61,7 +63,7 @@ export default function Details(){
                         {isLoggedin && !isOwner
                         ? (!hasLiked
                                 ? <Link to={`/${post._id}/like`}><img src={likeImage} alt="Like Icon" className={styles.likeImage} /></Link>
-                                : <><Link to="#"><img src={likedImage} alt="Like Icon" className={styles.likeImage} /></Link></>
+                                : <><Link to={`/${post._id}/like`}><img src={likedImage} alt="Like Icon" className={styles.likeImage} /></Link></>
                         )
                         :<></>}
 
