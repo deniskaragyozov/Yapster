@@ -59,6 +59,10 @@ export default function Details() {
                         {isOwner ? (
                             <>
                                 <div className={styles.postActions}>
+                                    {!hasLiked
+                                    ? <Link to={`/${post._id}/like`}><img src={likeImage} alt="Like Icon" className={styles.likeImage} /></Link>
+                                    : <Link to={`/${post._id}/like`}><img src={likedImage} alt="Like Icon" className={styles.likeImage} /></Link>
+                                    }
                                     <Link to={`/${post._id}/comment`}><img src={commentImage} alt="Comment Icon" className={styles.commentImage} /></Link>
                                     <Link to={`/${post._id}/edit`}><img src={editImage} alt="Edit Icon" className={styles.editImage} /></Link>
                                     <Link to={`/${post._id}/delete`}><img src={deleteImage} alt="Delete Icon" className={styles.deleteImage} /></Link>
