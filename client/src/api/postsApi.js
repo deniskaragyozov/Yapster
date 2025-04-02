@@ -25,8 +25,12 @@ export const useGetPosts = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
+        const searchParams = new URLSearchParams({
+            sortBy: `_createdOn desc`
+        });
+
         try{
-            request("GET", baseUrl)
+            request("GET", `${baseUrl}?${searchParams.toString()}`)
             .then(setPosts)
         }catch(err){
             console.log(err.message)
@@ -68,6 +72,7 @@ export const useEditPost = () => {
                 'X-Authorization': accessToken
             }
         }
+
     return request("PUT", `${baseUrl}/${postId}`, postData, options);
     }
 
