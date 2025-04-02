@@ -93,6 +93,16 @@
     gap: 10px;
 }
 
+.post a{
+    color: #dcdcdc;
+    text-decoration: none;
+}
+
+.post a:hover{
+    color: #32CD32;
+    text-decoration: underline;
+}
+
 .profilePicPost {
     width: 40px;
     height: 40px;

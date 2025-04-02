@@ -24,11 +24,9 @@ export default function Details(){
 
     return(
         <div className={styles.container}>
-            {/* Back Button */}
             <Link to="/"><button className={styles.backButton}>← Back</button></Link>
         <main className={styles.feed}>
             <h1>Post</h1>
-            {/* Post Section */}
             <div className={styles.post}>
                     <div className={styles.postHeader}>
                         <img src={!!post.owner?.profilePicUrl ? post.owner.profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePicPost} />

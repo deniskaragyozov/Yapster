@@ -23,8 +23,8 @@ export default function Home(){
             posts.map(post =>
             <div className={styles.post} key={post?._id}>
                 <div className={styles.postHeader}>
-                    <img src={!!post.owner.profilePicUrl ? post.owner.profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePicPost}/>
-                    <span className={styles.username}>{post.owner.username}</span>
+                    <img src={!!post.owner.profilePicUrl ? post.owner?.profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePicPost}/>
+                    <Link to={`/${post._ownerId}/profile`}><span className={styles.username}>{post.owner?.username}</span></Link>
                 </div>
                 <p className={styles.postText}>{post.title}</p>
                 <Link to={`/${post._id}/details`}>
