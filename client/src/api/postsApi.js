@@ -55,10 +55,9 @@ export const usePost = (postId) => {
             }
     }, []);
 
-
-    return{
-        ...post
-    }
+        return{
+            ...post
+        }
 }
 
 export const useEditPost = () => {
@@ -81,23 +80,28 @@ export const useEditPost = () => {
     }
 }
 
-export const useDeletePost = (postId) => {
+export const useDeletePost = () => {
     const { accessToken } = useContext(UserContext);
-    
-    useEffect(() => {
+
+    const deletePost = async (postId) => {
+
         const options = {
             headers:{
                 'X-Authorization': accessToken
             }
         }
-
         try{
-            request("DELETE", `${baseUrl}/${postId}`, null, options)
-            .then(res => console.log(res))
+             await request("DELETE", `${baseUrl}/${postId}`, null, options)
+
         }catch(err){
             console.log(err.message)
         }
-    }, [])
+
+    }
+
+    return{
+        deletePost
+    }       
 }
 
 export const useUserPosts = (userId) => {
