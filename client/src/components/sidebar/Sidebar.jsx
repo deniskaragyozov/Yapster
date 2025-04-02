@@ -11,13 +11,11 @@ import { useContext, useState } from 'react'
 import Modal from '../modal/Modal.jsx'
 import Login from '../login/Login.jsx'
 import Register from '../register/Register.jsx'
-import Post from '../post/Post.jsx'
 import { UserContext } from '../../contexts/UserContext.js'
 
 export default function Sidebar(){
          const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
          const [isLoginModalOpen, setLoginModalOpen] = useState(false);
-         const [isPostModalOpen, setPostModalOpen] = useState(false);
          const {email, _id} = useContext(UserContext);
         
             const loginClickHandler = () => {
@@ -61,7 +59,7 @@ export default function Sidebar(){
 
         </ul>
     </nav>
-                <Modal isOpen={isLoginModalOpen} onClose={closeLoginModal}>
+            <Modal isOpen={isLoginModalOpen} onClose={closeLoginModal}>
                 <Login closeModal={closeLoginModal}/>
             </Modal>
                  

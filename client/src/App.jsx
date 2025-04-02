@@ -34,6 +34,10 @@ function App() {
       const existingLikes = state[postId] || [];
   
       if (existingLikes.includes(userId)) {
+        const userIndex = existingLikes.indexOf(userId);
+
+        existingLikes.splice(userIndex, 1);
+
         return state;
       }
   

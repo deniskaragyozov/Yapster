@@ -68,7 +68,7 @@ export const useEditPost = () => {
                 'X-Authorization': accessToken
             }
         }
-
+        
     return request("PUT", `${baseUrl}/${postId}`, postData, options);
     }
 

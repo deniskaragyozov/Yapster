@@ -50,7 +50,7 @@ export default function Details(){
                     : null
                     }
                     <div className={styles.postFooter}>
-                        <span className={styles.postComments}>Likes: {postLikes?.length}</span>
+                        <span className={styles.postComments}>Likes: {!!postLikes ? postLikes?.length : "0"}</span>
                         {isOwner ? (
                             <>
                                 <div className={styles.postActions}>
