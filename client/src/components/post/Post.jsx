@@ -41,6 +41,11 @@ export default function Post(){
             return;
         }
 
+        if(values.description.length > 900){
+            setError("Description should be less than 900 characters long");
+            return;
+        }
+
         try{
             const postData = {
                 title: values.title,
