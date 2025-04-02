@@ -31,6 +31,17 @@ export default function Register({
             setError("All required fields must be filled");
             return;
         }
+
+        if(username.length > 20){
+            setError("Username should be less than 20 characters long");
+            return;
+        }
+
+        if(bio.length > 50){
+            setError("Bio should be less than 50 characters long");
+            return;
+        }
+
         if(password.length < 6){
             setError("Password should be at least 6 characters long");
             return;
