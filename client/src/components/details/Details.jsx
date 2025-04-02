@@ -1,4 +1,6 @@
 import pfpImage from '../../assets/profile.png'
+import editImage from '../../assets/edit.png'
+import deleteImage from '../../assets/delete.png'
 
 import styles from './details.module.css'
 import { Link, useParams } from 'react-router';
@@ -43,8 +45,8 @@ export default function Details(){
                         {isOwner ? (
                             <>
                                 <div className={styles.postActions}>
-                                    <Link to={`/${post._id}/edit`}><button className={styles.editButton}>Edit</button></Link>
-                                    <Link to={`/${post._id}/delete`}><button className={styles.deleteButton}>Delete</button></Link>
+                                    <Link to={`/${post._id}/edit`}><img src={editImage} alt="Edit Icon" className={styles.editImage} /></Link>
+                                    <Link to={`/${post._id}/delete`}><img src={deleteImage} alt="Delete Icon" className={styles.deleteImage} /></Link>
                                 </div>
                              </>
                         ) : <></>}

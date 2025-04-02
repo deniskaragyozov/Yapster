@@ -90,29 +90,25 @@
     gap: 10px;
 }
 
-.editButton,
-.deleteButton {
-    background-color: #ffffff;
-    color: #333;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, transform 0.2s;
+.editImage{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
 }
 
-.editButton:hover {
-    background-color: #32cd32; /* Green for edit */
-    color: #fff;
-    transform: scale(1.05);
+.editImage:hover{
+    transform: scale(1.3);
 }
 
-.deleteButton:hover {
-    background-color: #ff4d4d; /* Red for delete */
-    color: #fff;
-    transform: scale(1.05);
+.deleteImage{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.deleteImage:hover{
+    transform: scale(1.3);
+    background-color: #ff4d4d
 }
 
 .commentButton {
