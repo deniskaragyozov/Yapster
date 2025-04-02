@@ -43,20 +43,6 @@ h1 {
     gap: 5px; 
 }
 
-/* .alreadyRegistered {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    margin-top: 20px;
-    display: inline-block;
-    transition: color 0.3s;
-}
-
-.alreadyRegistered:hover {
-    color: #32CD32;
-    transform: scale(1.05);
-} */
-
 .homeLogoImg {
     width: 160px;
     height: auto;

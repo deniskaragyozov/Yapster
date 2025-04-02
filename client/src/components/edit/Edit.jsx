@@ -18,6 +18,8 @@ export default function Edit(){
 
     const user = useContext(UserContext);
 
+    const isOwner = user._id === post?._ownerId
+
     const {editPost} = useEditPost();
 
     const [error, setError] = useState(null);
@@ -62,6 +64,12 @@ export default function Edit(){
     }
 
     const [_, editAction] = useActionState(editFormHandler, {title: '', image: '', description: ''});
+
+    if(!!post._id){
+        if(!isOwner){
+            return <Navigate to="/"/>
+        }
+    }
 
 
     return(
