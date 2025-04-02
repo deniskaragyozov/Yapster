@@ -17,6 +17,8 @@ import Like from './components/like/Like.jsx'
 import { LikesContext } from './contexts/LikesContext.js'
 import AuthGuard from './components/guards/authGuard.jsx'
 import Search from './components/search/Search.jsx'
+import Comment from './components/comment/Comment.jsx'
+import { CommentsContext } from './contexts/CommentsContext.js'
 
 function App() {
   const [user, setUser] = usePersistedState('auth', {});
@@ -50,10 +52,24 @@ function App() {
     });
   }
 
+  const [comments, setComments] = usePersistedState('comments', {});
+
+  const commentHandler = (postId, commentData) => {
+    setComments((state) => {
+      const existingComments = state[postId] || [];
+
+      return {
+        ...state,
+        [postId]: [...existingComments, commentData],
+      };
+    });
+  }
+
   return (
     <>
     <UserContext.Provider value={{...user, userLoginHandler, userLogoutHandler}}>
     <LikesContext.Provider value={{...likes, likeHandler}}>
+    <CommentsContext.Provider value={{...comments, commentHandler}}>
      <Routes>
      {!!user.email 
      ?<Route index element={<Home />}/> 
@@ -67,10 +83,12 @@ function App() {
           <Route path='/post' element={<Post />}/>
           <Route path='/:postId/edit' element={<Edit />}/>
           <Route path='/:postId/delete' element={<Delete />}/>
+          <Route path='/:postId/comment' element={<Comment />}/>
           <Route path='/:postId/like' element={<Like />}/>
           <Route path='/logout' element={<Logout />}/>
         </Route>
      </Routes>
+     </CommentsContext.Provider>
      </LikesContext.Provider>
      </UserContext.Provider>
     </>

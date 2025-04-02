@@ -73,7 +73,6 @@ export default function Post(){
     }
 
     return (
-        <>
         <div className={styles.postContainer}>
             <Link to="/"><img src={logoImg} alt="logo" className={styles.postLogoImg}/></Link>
                 <h1 className={styles.title}>What's on your mind?</h1>
@@ -88,6 +87,5 @@ export default function Post(){
                     <button type="submit" className={styles.postBtn}>Post</button>
                 </form>
             </div>
-        </>
     )
 }

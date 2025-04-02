@@ -91,7 +91,8 @@ export const useDeletePost = () => {
             }
         }
         try{
-             await request("DELETE", `${baseUrl}/${postId}`, null, options)
+        
+            await request("DELETE", `${baseUrl}/${postId}`, null, options)
 
         }catch(err){
             console.log(err.message)

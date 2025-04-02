@@ -13,7 +13,7 @@ export default function Delete(){
 
     const user = useContext(UserContext);
 
-    const {deletePost} = useDeletePost();
+    const { deletePost } = useDeletePost();
 
     const isOwner = user._id === post?._ownerId
 
