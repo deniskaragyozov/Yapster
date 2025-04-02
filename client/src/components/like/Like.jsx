@@ -27,7 +27,7 @@ export default function Like(){
             }
             navigate(`/${postId}/details`);
         }
-    }, [])
+    }, [post])
     
     return(<>
     </>)
