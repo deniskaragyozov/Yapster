@@ -16,6 +16,7 @@ import Delete from './components/delete/Delete.jsx'
 import Like from './components/like/Like.jsx'
 import { LikesContext } from './contexts/LikesContext.js'
 import AuthGuard from './components/guards/authGuard.jsx'
+import Search from './components/search/Search.jsx'
 
 function App() {
   const [user, setUser] = usePersistedState('auth', {});
@@ -63,6 +64,7 @@ function App() {
         <Route path='/:userId/profile' element={<Profile />}/>
         <Route element={<AuthGuard />}>
           <Route path='/post' element={<Post />}/>
+          <Route path='/search' element={<Search />}/>
           <Route path='/:postId/edit' element={<Edit />}/>
           <Route path='/:postId/delete' element={<Delete />}/>
           <Route path='/:postId/like' element={<Like />}/>

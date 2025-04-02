@@ -1,0 +1,182 @@
+.container {
+    display: flex;
+    width: 100%;
+    overflow: auto;
+}
+
+
+.feed {
+    margin-top: 0; 
+    flex: 1;
+    padding: 20px; 
+    overflow-y: auto; 
+    height: 100vh; 
+    box-sizing: border-box;
+    scrollbar-width: none; 
+    margin-right: 290px;
+
+}
+.title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    letter-spacing: 2px; 
+    margin-top: -10px;
+    margin-bottom: 70px;
+    color: #ffffff;
+    outline: 2px none #4b4b4b;
+    margin-left: 90px;
+    box-shadow: 0 0 7px rgba(129, 129, 129, 0.583);
+
+}
+
+.noPosts{
+    background-color: #181717;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: 320px;
+    margin-right: 370px;
+    margin-bottom: 20px;
+}
+
+
+.noPostsText {
+    font-size: 2rem;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+}
+
+.post {
+    background-color: #181717;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: 390px;
+    margin-right: 260px;
+    margin-bottom: 20px;
+}
+.post h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+}
+
+.post p {
+    font-size: 1rem;
+}
+
+.postContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.postHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.post a{
+    color: #dcdcdc;
+    text-decoration: none;
+}
+
+.post a:hover{
+    color: #32CD32;
+    text-decoration: underline;
+}
+
+.profilePicPost {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 1.4rem;
+    flex-grow: 1;
+    margin-right: 350px;
+}
+
+.postText {
+    font-size: 1.2rem;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+}
+
+.readMore {
+    background-color: white;
+    color: #3a3b3a;
+    padding: 5px 10px;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-left:380px;
+}
+
+.readMore:hover{
+    background-color: #32CD32;
+    color: rgb(235, 235, 235);
+    text-shadow: 0px 1px 1px rgb(0, 0, 0);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.5);
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px 0;
+    gap: 10px;
+    margin-left: 390px;
+    margin-bottom: 50px;
+}
+
+.searchIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.searchBar {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.resultsText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
