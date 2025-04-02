@@ -1,8 +1,9 @@
-import pfpImage from '../../assets/profile.png'
-import editImage from '../../assets/edit.png'
-import deleteImage from '../../assets/delete.png'
+import pfpImage from '../../assets/profile.png';
+import editImage from '../../assets/edit.png';
+import deleteImage from '../../assets/delete.png';
+import likeImage from '../../assets/like.png';
 
-import styles from './details.module.css'
+import styles from './details.module.css';
 import { Link, useParams } from 'react-router';
 import { usePost } from '../../api/postsApi.js';
 import { useContext } from 'react';
@@ -51,7 +52,7 @@ export default function Details(){
 
                         {isLoggedin && !isOwner
                         ? (
-                            <button className={styles.commentButton}>Like</button>
+                            <Link to="#"><img src={likeImage} alt="Like Icon" className={styles.likeImage} /></Link>
                         )
                         :<></>}
                     </div>
