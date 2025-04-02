@@ -2,7 +2,6 @@ import { useNavigate, useParams } from "react-router";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../contexts/UserContext.js";
 import { LikesContext } from "../../contexts/LikesContext.js";
-import { usePost } from "../../api/postsApi.js";
 
 export default function Like(){
     const navigate = useNavigate();
@@ -16,10 +15,8 @@ export default function Like(){
     const { likeHandler } = useContext(LikesContext);
 
     useEffect(() => {
-
             likeHandler(postId, user._id);
             navigate(`/${postId}/details`);
-        
     }, [])
     
     return(<>
