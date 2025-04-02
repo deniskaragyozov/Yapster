@@ -16,6 +16,8 @@ export default function Edit(){
 
     const post = usePost(postId);
 
+    const user = useContext(UserContext);
+
     const {editPost} = useEditPost();
 
     const [error, setError] = useState(null);
