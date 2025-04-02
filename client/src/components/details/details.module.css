@@ -31,6 +31,16 @@
     margin-right: 500px;
 }
 
+.post a{
+    color: #dcdcdc;
+    text-decoration: none;
+}
+
+.post a:hover{
+    color: #32CD32;
+    text-decoration: underline;
+}
+
 .postImage {
     width: 100%;
     max-width: 100%;
