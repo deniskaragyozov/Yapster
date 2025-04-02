@@ -33,7 +33,7 @@ export default function Details(){
 
     return(
         <div className={styles.container}>
-            <Link to="/"><button className={styles.backButton}>← Back</button></Link>
+            <Link to="/home"><button className={styles.backButton}>← Back</button></Link>
         <main className={styles.feed}>
             <h1>Post</h1>
             <div className={styles.post}>

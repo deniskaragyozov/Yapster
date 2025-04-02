@@ -62,9 +62,9 @@ function App() {
         <Route path='/home' element={<Home />}/>
         <Route path='/:postId/details' element={<Details />}/>
         <Route path='/:userId/profile' element={<Profile />}/>
+        <Route path='/search' element={<Search />}/>
         <Route element={<AuthGuard />}>
           <Route path='/post' element={<Post />}/>
-          <Route path='/search' element={<Search />}/>
           <Route path='/:postId/edit' element={<Edit />}/>
           <Route path='/:postId/delete' element={<Delete />}/>
           <Route path='/:postId/like' element={<Like />}/>
