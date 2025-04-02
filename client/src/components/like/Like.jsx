@@ -11,23 +11,16 @@ export default function Like(){
     
     const postId = params.postId;
 
-    const post = usePost(postId)
-
     const user = useContext(UserContext);
-
-    const isOwner = user._id === post._ownerId;
 
     const { likeHandler } = useContext(LikesContext);
 
     useEffect(() => {
 
-        if(!!post){
-            if(!isOwner){
-                likeHandler(postId, user._id);
-            }
+            likeHandler(postId, user._id);
             navigate(`/${postId}/details`);
-        }
-    }, [post])
+        
+    }, [])
     
     return(<>
     </>)
