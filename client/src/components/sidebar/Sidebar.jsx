@@ -1,17 +1,18 @@
-import logoImage from '../../assets/logo.png'
-import homeImage from '../../assets/home.png'
-import pfpImage from '../../assets/profile.png'
-import registerImage from '../../assets/register.png'
-import loginImage from '../../assets/login.png'
-import logoutImage from '../../assets/logout.png'
+import logoImage from '../../assets/logo.png';
+import homeImage from '../../assets/home.png';
+import pfpImage from '../../assets/profile.png';
+import registerImage from '../../assets/register.png';
+import loginImage from '../../assets/login.png';
+import logoutImage from '../../assets/logout.png';
+import searchImage from '../../assets/search.png';
 
-import { Link } from 'react-router'
-import styles from './sidebar.module.css'
-import { useContext, useState } from 'react'
-import Modal from '../modal/Modal.jsx'
-import Login from '../login/Login.jsx'
-import Register from '../register/Register.jsx'
-import { UserContext } from '../../contexts/UserContext.js'
+import { Link } from 'react-router';
+import styles from './sidebar.module.css';
+import { useContext, useState } from 'react';
+import Modal from '../modal/Modal.jsx';
+import Login from '../login/Login.jsx';
+import Register from '../register/Register.jsx';
+import { UserContext } from '../../contexts/UserContext.js';
 
 export default function Sidebar(){
          const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
@@ -40,6 +41,7 @@ export default function Sidebar(){
         <ul>
             <li><Link to='/'><img src={logoImage} alt="logo" className={styles.sidebarLogoImg}/></Link></li>
             <li><img src={homeImage} alt="Home Icon" className={styles.navIcons} /><Link to="/home">Home</Link></li>
+            <li><img src={searchImage} alt="Search Icon" className={styles.navIcons} /><Link to="/search">Search</Link></li>
             {!!email 
             ?<>
             <li><img src={pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to={`/${_id}/profile`}>Profile</Link></li>
