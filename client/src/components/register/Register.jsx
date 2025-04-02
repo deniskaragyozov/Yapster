@@ -28,7 +28,7 @@ export default function Register({
         const {profilePicUrl, username, bio, email, password, rePassword } = Object.fromEntries(formData);
 
         if(username === '' || email === '' || password === '' || rePassword === '' ){
-            setError("All required fields must be filled");
+            setError("Username and email are required");
             return;
         }
 
