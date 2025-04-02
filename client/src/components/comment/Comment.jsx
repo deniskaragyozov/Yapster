@@ -63,9 +63,9 @@ export default function Comment() {
                 <h1 className={styles.title}>What would you like to comment?</h1>
                 <form className={styles.postForm} action={commentAction} >
                     <span>Comment</span>
-                    <textarea name="comment"></textarea>
+                    <textarea name="comment" defaultValue={formValues.comment} onChange={changeHandler}></textarea>
                     {error && <h6 className={styles.errorText}>{error}!</h6>}
-                    <button type="submit" className={styles.postBtn} defaultValue={formValues.comment} onChange={changeHandler}>Comment</button>
+                    <button type="submit" className={styles.postBtn} >Post Comment</button>
                 </form>
             </div>
     )

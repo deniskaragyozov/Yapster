@@ -52,6 +52,8 @@ textarea:focus {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .postBtn:hover {
