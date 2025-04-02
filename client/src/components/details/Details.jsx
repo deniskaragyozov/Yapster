@@ -52,7 +52,7 @@ export default function Details(){
 
                         {isLoggedin && !isOwner
                         ? (
-                            <Link to="#"><img src={likeImage} alt="Like Icon" className={styles.likeImage} /></Link>
+                            <Link to={`/${post._id}/like`}><img src={likeImage} alt="Like Icon" className={styles.likeImage} /></Link>
                         )
                         :<></>}
                     </div>

@@ -51,7 +51,10 @@ export default function Post(){
                 title: values.title,
                 image: values.image,
                 description: values.description,
-                owner: user
+                owner: {
+                    username: user.username,
+                    profilePicUrl: user.profilePicUrl
+                }
             }
             
             await createPost(postData, accessToken);
