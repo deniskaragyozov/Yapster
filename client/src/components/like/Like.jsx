@@ -15,7 +15,7 @@ export default function Like(){
     const { likeHandler } = useContext(LikesContext);
 
     useEffect(() => {
-        likeHandler(postId, user._id)
+        likeHandler(postId, user._id);
         navigate(`/${postId}/details`);
     }, [])
     

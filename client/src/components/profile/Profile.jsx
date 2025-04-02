@@ -36,7 +36,7 @@ export default function Profile() {
                             {posts.length === 0
                             ? <h1 className={styles.noPosts}>No posts yet</h1>
                             : posts.map(post => 
-                                <div className={styles.post}>
+                                <div className={styles.post} key={post._id}>
                                 <div className={styles.postHeader}>
                                     <img src={!!post.owner.profilePicUrl ? post.owner.profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePicPost} />
                                     <span className={styles.usernamePost}>{post.owner.username}</span>

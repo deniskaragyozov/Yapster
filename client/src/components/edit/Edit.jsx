@@ -1,6 +1,6 @@
 import logoImg from '../../assets/logo.png';
 
-import { Link, useNavigate, useParams } from 'react-router';
+import { Navigate, Link, useNavigate, useParams } from 'react-router';
 import styles from './edit.module.css'
 import { useEditPost, usePost } from '../../api/postsApi.js';
 import { useActionState, useContext, useState } from 'react';
@@ -15,8 +15,6 @@ export default function Edit(){
     const postId = params.postId;
 
     const post = usePost(postId);
-
-    const user = useContext(UserContext);
 
     const {editPost} = useEditPost();
 
@@ -62,6 +60,7 @@ export default function Edit(){
     }
 
     const [_, editAction] = useActionState(editFormHandler, {title: '', image: '', description: ''});
+
 
     return(
     <>

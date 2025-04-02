@@ -15,6 +15,7 @@ import Edit from './components/edit/Edit.jsx'
 import Delete from './components/delete/Delete.jsx'
 import Like from './components/like/Like.jsx'
 import { LikesContext } from './contexts/LikesContext.js'
+import AuthGuard from './components/guards/authGuard.jsx'
 
 function App() {
   const [user, setUser] = usePersistedState('auth', {});
@@ -58,14 +59,15 @@ function App() {
      :<Route index element={<Welcome/>}/> 
      }   
         <Route path='/home' element={<Home />}/>
-        <Route path='/post' element={<Post />}/>
-        <Route path='/:userId/profile' element={<Profile />}/>
         <Route path='/:postId/details' element={<Details />}/>
-        <Route path='/:postId/edit' element={<Edit />}/>
-        <Route path='/:postId/delete' element={<Delete />}/>
-        <Route path='/:postId/like' element={<Like />}/>
-        <Route path='/logout' element={<Logout />}/>
-
+        <Route path='/:userId/profile' element={<Profile />}/>
+        <Route element={<AuthGuard />}>
+          <Route path='/post' element={<Post />}/>
+          <Route path='/:postId/edit' element={<Edit />}/>
+          <Route path='/:postId/delete' element={<Delete />}/>
+          <Route path='/:postId/like' element={<Like />}/>
+          <Route path='/logout' element={<Logout />}/>
+        </Route>
      </Routes>
      </LikesContext.Provider>
      </UserContext.Provider>

@@ -29,8 +29,6 @@ export default function Details(){
     
     const postLikes = likes[postId];
 
-    console.log(postLikes)
-
     const hasLiked = !!postLikes ? postLikes.includes(user._id) : false;
 
     return(
