@@ -1,4 +1,4 @@
-import { useContext, useDebugValue, useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import request from "../utils/request.js"
 import { UserContext } from "../contexts/UserContext.js"
 
@@ -25,8 +25,12 @@ export const useGetPosts = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        request("GET", baseUrl)
-        .then(setPosts)
+        try{
+            request("GET", baseUrl)
+            .then(setPosts)
+        }catch(err){
+            console.log(err.message)
+        }
     }, [])
 
     return{
@@ -39,8 +43,12 @@ export const usePost = (postId) => {
 
 
     useEffect(() => { 
-            request("GET", `${baseUrl}/${postId}`)
-            .then(setPost)
+            try{
+                request("GET", `${baseUrl}/${postId}`)
+                .then(setPost)
+            }catch(err){
+                console.log(err.message)
+            }
     }, []);
 
 
