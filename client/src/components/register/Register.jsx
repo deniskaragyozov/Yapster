@@ -32,6 +32,11 @@ export default function Register({
             return;
         }
 
+        if(username.includes(' ')){
+            setError("Username can\'t contain spaces");
+            return;
+        }
+
         if(username.length > 20){
             setError("Username should be less than 20 characters long");
             return;

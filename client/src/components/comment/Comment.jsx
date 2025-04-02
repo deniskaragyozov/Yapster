@@ -30,6 +30,11 @@ export default function Comment() {
     const commentFormHandler = async (_, formData) => {
         const values = Object.fromEntries(formData);
 
+        if(values.comment === ''){
+            setError("Comment can\'t be empty");
+            return;
+        }
+
         if(values.comment.length > 900){
             setError("Description should be less than 900 characters long");
             return;
