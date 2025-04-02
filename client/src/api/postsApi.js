@@ -87,3 +87,21 @@ export const useDeletePost = (postId) => {
         }
     }, [])
 }
+
+export const useUserPosts = (userId) => {
+    const [posts, setPosts] = useState([]);
+    
+    
+        useEffect(() => { 
+                const searchParams = new URLSearchParams({
+                    where: `_ownerId="${userId}"`
+                })
+    
+                request("GET", `${baseUrl}?${searchParams.toString()}`)
+                .then(setPosts)
+        }, [userId]);
+            
+        return{
+            posts,
+        }
+}

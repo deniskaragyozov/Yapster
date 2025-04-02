@@ -14,11 +14,13 @@ export default function Home(){
         <Sidebar/>
         <main className={styles.feed}>
         <h1 className={styles.title}>Latest</h1>
+        
         {posts.length === 0 
         ? <div className={styles.noPosts}>
         <p className={styles.noPostsText}>There are no posts yet, be the first one!</p>
         </div>
-        : posts.map(post => 
+        :
+            posts.map(post =>
             <div className={styles.post} key={post?._id}>
                 <div className={styles.postHeader}>
                     <img src={!!post.owner.profilePicUrl ? post.owner.profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePicPost}/>

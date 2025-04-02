@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router'
 import styles from './profile.module.css'
 import Sidebar from '../sidebar/Sidebar.jsx'
 import { useUser } from '../../api/usersApi.js'
+import { useUserPosts } from '../../api/postsApi.js'
 
 export default function Profile() {
     const params = useParams();
@@ -11,6 +12,8 @@ export default function Profile() {
     const userId = params.userId;
 
     const user = useUser(userId);
+
+    const { posts } = useUserPosts(userId);
 
     return (
         <>
@@ -26,30 +29,26 @@ export default function Profile() {
                             <p className={styles.bio}>
                             {!!user.bio ? user.bio : "No bio yet"}
                             </p>
+                            <h2 className={styles.postsTitle}>Posts</h2>
                         </div>
                         
                         <div className={styles.postsContainer}>
-                            <div className={styles.post}>
+                            {posts.length === 0
+                            ? <h1 className={styles.noPosts}>No posts yet</h1>
+                            : posts.map(post => 
+                                <div className={styles.post}>
                                 <div className={styles.postHeader}>
-                                    <img src={pfpImage} alt="Profile Picture" className={styles.profilePicPost} />
-                                    <span className={styles.usernamePost}>Username</span>
+                                    <img src={!!post.owner.profilePicUrl ? post.owner.profilePicUrl : pfpImage} alt="Profile Picture" className={styles.profilePicPost} />
+                                    <span className={styles.usernamePost}>{post.owner.username}</span>
                                 </div>
-                                <p className={styles.postText}>This is a sample post with some text content.</p>
-                                <Link to="#">
+                                <p className={styles.postText}>{post.title}</p>
+                                <Link to={`/${post._id}/details`}>
                                     <button className={styles.readMore}>read more...</button>
                                 </Link>
                             </div>
-
-                            <div className={styles.post}>
-                                <div className={styles.postHeader}>
-                                    <img src={pfpImage} alt="Profile Picture" className={styles.profilePicPost} />
-                                    <span className={styles.usernamePost}>Username</span>
-                                </div>
-                                <p className={styles.postText}>This is another sample post with some text content.</p>
-                                <Link to="#">
-                                    <button className={styles.readMore}>read more...</button>
-                                </Link>
-                            </div>
+                                )
+                            }
+                            
                         </div>
                     </div>
                 </main>
