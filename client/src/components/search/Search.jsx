@@ -27,7 +27,7 @@ export default function Search(){
                     <img src={searchImage} alt="Search Icon" className={styles.searchIcon} />
                     <input
                         type="text"
-                        placeholder="Search posts..."
+                        placeholder="Search keywords or users..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className={styles.searchBar}
