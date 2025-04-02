@@ -15,9 +15,11 @@ import Register from '../register/Register.jsx';
 import { UserContext } from '../../contexts/UserContext.js';
 
 export default function Sidebar(){
-         const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
-         const [isLoginModalOpen, setLoginModalOpen] = useState(false);
-         const {email, _id} = useContext(UserContext);
+        const user = useContext(UserContext);    
+
+        const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
+        const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+        const {email, _id} = useContext(UserContext);
         
             const loginClickHandler = () => {
                 setLoginModalOpen(true);
@@ -44,8 +46,8 @@ export default function Sidebar(){
             <li><img src={searchImage} alt="Search Icon" className={styles.navIcons} /><Link to="/search">Search</Link></li>
             {!!email 
             ?<>
-            <li><img src={pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to={`/${_id}/profile`}>Profile</Link></li>
-            <li><img src={logoutImage} alt="Profile Icon"  className={styles.navIcons}/><Link to="/logout">Logout</Link></li>
+            <li><img src={!!user.profilePicUrl ? user.profilePicUrl : pfpImage} alt="Profile Icon"  className={styles.profilePicNav}/><Link to={`/${_id}/profile`}>Profile</Link></li>
+            <li><img src={logoutImage} alt="Logout Icon"  className={styles.navIcons}/><Link to="/logout">Logout</Link></li>
             <li><Link to="/post"><button className={styles.postBtn}>Post</button></Link></li>
             </>
             :<>
