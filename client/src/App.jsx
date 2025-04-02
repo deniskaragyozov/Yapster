@@ -14,10 +14,11 @@ import Post from './components/post/Post.jsx'
 import Edit from './components/edit/Edit.jsx'
 import Delete from './components/delete/Delete.jsx'
 import Like from './components/like/Like.jsx'
+import { LikesContext } from './contexts/LikesContext.js'
 
 function App() {
   const [user, setUser] = usePersistedState('auth', {});
-
+  
   const userLoginHandler = (resultData) => {
     setUser(resultData);
   }
@@ -26,9 +27,27 @@ function App() {
     setUser({});
   }
 
+  const [likes, setLikes] = usePersistedState('likes', {});
+
+  const likeHandler = (postId, userId) => {
+    setLikes((state) => {
+      const existingLikes = state[postId] || [];
+  
+      if (existingLikes.includes(userId)) {
+        return state;
+      }
+  
+      return {
+        ...state,
+        [postId]: [...existingLikes, userId],
+      };
+    });
+  }
+
   return (
     <>
     <UserContext.Provider value={{...user, userLoginHandler, userLogoutHandler}}>
+    <LikesContext.Provider value={{...likes, likeHandler}}>
      <Routes>
      {!!user.email 
      ?<Route index element={<Home />}/> 
@@ -44,6 +63,7 @@ function App() {
         <Route path='/logout' element={<Logout />}/>
 
      </Routes>
+     </LikesContext.Provider>
      </UserContext.Provider>
     </>
   )
