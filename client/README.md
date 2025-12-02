@@ -1,12 +1,67 @@
-# React + Vite
+# 💬 Yapster
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Yapster** is a social platform where users can create, share, and engage with posts.  
+It provides a clean, user-friendly interface to explore content, interact with discussions, and connect with other users.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📚 Frameworks & Libraries
+- **Frontend:** [React](https://react.dev/)
+- **Backend:** [SoftUni Practice Server](https://github.com/softuni-practice-server/softuni-practice-server.git)
+*(Built using the MERN stack architecture.)*
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started
+
+### 1️⃣ Clone the repository
+```bash
+
+git clone [https://github.com/deniskaragyozov/Yapster.git](https://github.com/deniskaragyozov/Yapster.git)
+
+```
+
+---
+
+### 2️⃣ Run the Client
+```bash
+
+cd Yapster/client
+npm install
+npm start
+
+```
+
+---
+
+### 3️⃣ Run the Server
+```bash
+
+cd Yapster/server
+npm install
+npm start
+
+```
+
+---
+
+### 4️⃣ Open in Browser
+```bash
+
+http://localhost:3000
+
+```
+
+---
+
+## ✨ Features
+- **User Authentication** — Register & log in
+- **Post Management** — Create, edit, and delete your own posts
+- **Likes System** — Like posts from other users
+- **User Profiles** 👤 — View profile picture, username, bio, and posts
+- **Home Page Highlights** — See the latest discussions
+
+---
+
+## 📄 License
+This project was developed for educational purposes as part of a React development course.
